@@ -1,0 +1,42 @@
+@ECHO OFF
+REM Œ‹‡ƒoƒbƒ`ƒtƒ@ƒCƒ‹Fdiv2.exe ‚É‚æ‚è¶¬
+
+ECHO •ªŠ„‚³‚ê‚½ƒtƒ@ƒCƒ‹‚ð•œŒ³‚µ‚Ü‚·
+
+IF NOT EXIST "uK”\~1.001"  GOTO ERR1
+IF NOT EXIST "uK”\~1.002"  GOTO ERR1
+IF     EXIST "uK”\—Í—{¬ƒZƒ~ƒi[2020.pdf"  GOTO ERR2
+
+COPY "uK”\~1.001" "uK”\~1.PDF"
+IF ERRORLEVEL 1 GOTO ERR3
+COPY /B "uK”\~1.PDF"+"uK”\~1.002"
+IF ERRORLEVEL 1 GOTO ERR3
+
+DEL "uK”\~1.001"
+DEL "uK”\~1.002"
+
+
+REN "uK”\~1.PDF" "uK”\—Í—{¬ƒZƒ~ƒi[2020.pdf"
+
+ECHO ‚±‚Ìƒoƒbƒ`ƒtƒ@ƒCƒ‹‚àÁ‚µ‚Ä‚­‚¾‚³‚¢
+GOTO END
+
+:ERR1
+ECHO ƒtƒ@ƒCƒ‹‚ªˆê•”‘¶Ý‚µ‚Ü‚¹‚ñ
+ECHO ˆ—‚ð’†Ž~‚µ‚Ü‚·
+GOTO END
+
+:ERR2
+ECHO •œŒ³æ‚Ìƒtƒ@ƒCƒ‹‚ªŠù‚É‘¶Ý‚µ‚Ä‚¢‚Ü‚·
+ECHO ˆ—‚ð’†Ž~‚µ‚Ü‚·
+GOTO END
+
+:ERR3
+ECHO •œŒ³‚ÉŽ¸”s‚µ‚Ü‚µ‚½
+ECHO ˆ—‚ð’†Ž~‚µ‚Ü‚·
+GOTO END
+
+:END
+ECHO I—¹‚·‚é‚É‚ÍA‰½‚©ƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢
+PAUSE >NUL
+
